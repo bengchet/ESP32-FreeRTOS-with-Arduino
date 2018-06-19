@@ -11,6 +11,7 @@
 #define USER_PASS "YOUR_PASS"
 #define BLINK_GPIO 16
 
+#include "Arduino.h"
 #include <WiFi.h>
 
 void blink_task(void *pvParameter)
