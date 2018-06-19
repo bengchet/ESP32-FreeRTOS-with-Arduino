@@ -11,7 +11,7 @@
 #define USER_PASS "YOUR_PASS"
 #define BLINK_GPIO 16
 
-#include "Arduino.h"
+#include <Arduino.h>
 #include <WiFi.h>
 
 void blink_task(void *pvParameter)
@@ -34,6 +34,7 @@ void blink_task(void *pvParameter)
 
 extern "C" void app_main()
 {
+    initArduino();
     WiFi.begin(USER_SSID, USER_PASS);
 
     xTaskCreate(&blink_task, "blink_task", 512, NULL, 5, NULL);
